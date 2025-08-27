@@ -1,19 +1,26 @@
-import turtle 
-t = turtle.Turtle()
-s = turtle.Screen()
-colors = ['red', 'purple', 'blue', 'green', 'orange', 'yellow'] 
-s.bgcolor('black') 
-t.speed('fastest')
-t.hideturtle()
-while True:
-  for x in range(200): 
-    t.pencolor(colors[x%len(colors)])
-    t.width(x/100 + 1)
-    t.forward(x) 
-    t.left(59)
-  t.right(239)  
-  for x in range(200, 0, -1): 
-    t.pencolor('black') 
-    t.width(x/100 + 7)
-    t.forward(x) 
-    t.right(59) 
+#Input a number 
+num = int(input("Enter the number : "))
+t = num
+numLen = 0
+#iterate the loop
+while t>0: 
+  numLen = numLen+1
+  t = int(t/10)
+
+if numLen>=4: #condition 1
+  numLen = int(numLen/2)
+  chk = 0
+  while num>0: #iterate loop
+    rem = num%10
+    if chk==numLen: #nested condition 1
+      midOne = rem
+    elif chk==(numLen-1): 
+      midTwo = rem
+    num = int(num/10)
+    chk = chk+1
+  prod = midOne*midTwo #product of middle digits
+  #display the result
+  print("\nProduct of Mid digits (" +str(midOne)+ "*" +str(midTwo)+ ") = ", prod)
+
+else:
+  print("\nIt's not a 4 or more than 4-digit number!")
