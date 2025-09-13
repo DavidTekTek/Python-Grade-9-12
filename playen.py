@@ -1,13 +1,12 @@
-#Take input from user
-rows = int(input("Please Enter the total Number of Rows  : "))
-number = 1 #initialise by 1
+import math
 
-print("Floyd's Triangle") 
-#outer loop for number of rows
-for i in range(1, rows + 1):
-  #inner loop for number of columns
-    for j in range(1, i + 1):   
-      #display result     
-        print(number, end = '  ')
-        number = number + 1
-    print()
+# Ask the user what shape they want
+shape = input("Enter the shape you want to calculate the area for: ")
+
+# Check if the user typed SPHERE or sphere
+if shape == "SPHERE" or shape == "sphere":
+    radius = float(input("Enter the radius of the sphere: "))
+    area = 4 * math.pi * radius ** 2   # formula for area of a sphere
+    print("The area of the sphere is:", area)
+else:
+    print("This program only calculates the area of a sphere.")
